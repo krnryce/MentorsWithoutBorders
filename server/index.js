@@ -3,11 +3,6 @@ const http = require('http');
 const socketIo = require('socket.io');
 const exampleData = require('./exampleData').exampleMessages; //temp stuff
 const bodyParser = require('body-parser');
-const {
-  TWILIO_ACCOUNT_SID,
-  TWILIO_API_KEY,
-  TWILIO_API_SECRET
-} = require('../config.js');
 const AccessToken = require('twilio').jwt.AccessToken;
 const VideoGrant = AccessToken.VideoGrant;
 
@@ -94,9 +89,9 @@ app.get('/token', (req, res) => {
 
   // Create access token, signed and returned to client containing grant
   let token = new AccessToken(
-    TWILIO_ACCOUNT_SID,
-    TWILIO_API_KEY,
-    TWILIO_API_SECRET
+    process.env.TWILIO_ACCOUNT_SID,
+    process.env.TWILIO_API_KEY,
+    process.env.TWILIO_API_SECRET
   );
 
   // Assign generated identity to token
