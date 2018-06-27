@@ -14,7 +14,7 @@ class App extends Component {
     super();
     this.state = {
       messages: [],
-      socket: openSocket("http://localhost:3000")
+      // socket: openSocket("http://localhost:3000")
     };
 
     this.state.socket.on("get message", data => {

@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon server/index.js",
+    "start": "node server/index.js",
     "start:prod": "node server/index.js",
     "dev": "webpack -d --watch ./client/index.js --output ./client/dist/bundle.js",
-    "build": "webpack -p ./client/index.js --output ./client/dist/bundle.js"
+    "build": "webpack -p ./client/index.js --output ./client/dist/bundle.js",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
