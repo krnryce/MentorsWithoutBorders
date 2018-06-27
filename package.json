@@ -9,7 +9,7 @@
     "start:prod": "node server/index.js",
     "dev": "webpack -d --watch ./client/index.js --output ./client/dist/bundle.js",
     "build": "webpack -p ./client/index.js --output ./client/dist/bundle.js",
-    "postinstall": "webpack --mode production ./client/index.js --output ./client/dist/bundle.js"
+    "postinstall": "webpack -d ./client/index.js --output ./client/dist/bundle.js"
   },
   "repository": {
     "type": "git",
